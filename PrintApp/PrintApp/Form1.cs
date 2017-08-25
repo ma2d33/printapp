@@ -171,6 +171,8 @@ namespace PrintApp
                 da.Fill(ds);
                 payedGridView.DataSource = ds.Tables[0].DefaultView;
 
+                
+
                 con.Close();
             }
             catch (Exception)
@@ -178,6 +180,8 @@ namespace PrintApp
                 throw;
             }
         }
+
+       
 
         private void populatePrintViedDG()
         {
@@ -201,6 +205,8 @@ namespace PrintApp
                 da.Fill(ds);
                 printViewGrid.DataSource = ds.Tables[0].DefaultView;
 
+                ListSortDirection dir = ListSortDirection.Descending;
+                printViewGrid.Sort(printViewGrid.Columns[1], dir);
                 con.Close();
             }
             catch (Exception)
@@ -220,18 +226,18 @@ namespace PrintApp
 
             countDBRows(u);
             int counter = 0;
-
             int tasknum = 0;
 
             timeNow.Text = (DateTime.Now.ToShortDateString() +"  "+ DateTime.Now.ToLongTimeString());
+
+            
+           
             
 
             string line;
             
             StreamReader csvFile = load_file(u);
-           // int day = DateTime.Today.Day-u;
-            
-            //string[] readPayedNumbers = File.ReadAllLines("C:\\myCsv\\PayedNumbers-" + DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + day + ".csv");
+          
 
             while ((line = csvFile.ReadLine()) != null)
             {
@@ -249,7 +255,7 @@ namespace PrintApp
                 Int32.TryParse(parts[2], out pages);
                 int copies;
                 Int32.TryParse(parts[3], out copies);
-               // Console.Write(parts[0].Length);
+               
 
                 string fileName =  Convert.ToString(parts[5]);
                 DateTime lineTime = Convert.ToDateTime(parts[0]);
@@ -395,15 +401,13 @@ namespace PrintApp
                 brakCheckBox.Checked = false;
                 colourCheckBox.Checked = false;
                 otherSummTextBox.Text = "";
-                calcSelected(0, 0, 0);
+                calcSelected(0, 0, 6);
 
-              //  pagesPriceIndex = 6;
-              // totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+              
             }
             if (sixRubCheckBox.Checked == false)
             {
-              //  pagesPriceIndex = 9;
-              //  totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+                calcSelected(0, 0, 9);
             }
         }
 
@@ -417,19 +421,13 @@ namespace PrintApp
                 brakCheckBox.Checked = false;
                 colourCheckBox.Checked = false;
                 otherSummTextBox.Text = "";
-                calcSelected(0, 0, 0);
+                calcSelected(0, 0, 9);
 
-                //   pagesPriceIndex = 9;
-
-                //  priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-                // totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
-
+                
             }
             if (nineRubCheckBox.Checked == false)
             {
-              //  pagesPriceIndex = 9;
-              //  priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-                //totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+                calcSelected(0, 0, 9);
             }
         }
 
@@ -445,17 +443,13 @@ namespace PrintApp
                 brakCheckBox.Checked = false;
                 colourCheckBox.Checked = false;
                 otherSummTextBox.Text = "";
-                calcSelected(0, 0, 0);
+                calcSelected(0, 0, 4);
 
-                //   pagesPriceIndex = 4;
-                //    priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-                // totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+               
             }
             if (fourRubCheckBox.Checked == false)
             {
-              //  pagesPriceIndex = 9;
-           //     priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-              //  totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+                calcSelected(0, 0, 9);
             }
         }
 
@@ -469,17 +463,13 @@ namespace PrintApp
                 brakCheckBox.Checked = false;
                 colourCheckBox.Checked = false;
                 otherSummTextBox.Text = "";
+                calcSelected(0, 0, 3);
 
-
-           //     pagesPriceIndex = 3;
-             //   priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex)); 
-               // totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+          
             }
             if (threRubCheckBox.Checked == false)
             {
-              //  pagesPriceIndex = 9;
-               // priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-                //totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+                calcSelected(0, 0, 9);
             }
         }
 
@@ -495,16 +485,11 @@ namespace PrintApp
                 otherSummTextBox.Text = "";
                 calcSelected(0, 0, 0);
 
-                //ToalPrice = 0;
-              //  pagesPriceIndex = 0;
-               // priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-                //totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+             
             }
             if (brakCheckBox.Checked == false)
             {
-              //  pagesPriceIndex = 9;
-              //  priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-               // totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+                calcSelected(0, 0, 9);
             }
         }
 
@@ -518,15 +503,12 @@ namespace PrintApp
                 threRubCheckBox.Checked = false;
                 brakCheckBox.Checked = false;
                 otherSummTextBox.Text = "";
-                               pagesPriceIndex = 20;
-                priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-               // totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+                calcSelected(0, 0, 20);
+                              
             }
             if (colourCheckBox.Checked == false)
             {
-                pagesPriceIndex = 9;
-                priceDisplayerFunct((logTotalPagesPrinted * pagesPriceIndex));
-               // totalSummLable.Text = "=" + (logTotalPagesPrinted * pagesPriceIndex).ToString() + "  Руб.";
+                calcSelected(0, 0, 9);
             }
         }
 
@@ -792,7 +774,7 @@ namespace PrintApp
             DateTime date = DateTime.Today;
             int today = date.Day;
             string toDay = (today < 9) ? "0" + today.ToString() : today.ToString();
-            SQLiteCommand comm = new SQLiteCommand("SELECT SUM(sum) FROM payed WHERE time Like '%-"+toDay+"%' AND pc is null ", conn);
+            SQLiteCommand comm = new SQLiteCommand("SELECT SUM(sum) FROM payed WHERE pc is null and time is not null AND time is CURRENT_DATE ", conn);
             totalShiftSummLBL.Text = comm.ExecuteScalar().ToString();
 
         }
@@ -1030,7 +1012,10 @@ namespace PrintApp
             colorDefectControl.Value = 0;
         }
 
-     
+        private void totalShiftSummLBL_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

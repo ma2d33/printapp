@@ -62,9 +62,9 @@
             this.timeNow = new System.Windows.Forms.Label();
             this.shiftLable = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.printViewGrid = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.printViewGrid = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.payedGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1.SuspendLayout();
@@ -73,9 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.defectControl)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.printViewGrid)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.printViewGrid)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payedGridView)).BeginInit();
             this.SuspendLayout();
@@ -314,6 +314,7 @@
             this.totalShiftSummLBL.Size = new System.Drawing.Size(58, 24);
             this.totalShiftSummLBL.TabIndex = 32;
             this.totalShiftSummLBL.Text = "time";
+            this.totalShiftSummLBL.Click += new System.EventHandler(this.totalShiftSummLBL_Click);
             // 
             // endShiftButton
             // 
@@ -354,6 +355,28 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1006, 500);
             this.panel3.TabIndex = 32;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1006, 500);
+            this.tabControl1.TabIndex = 23;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.printViewGrid);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(998, 474);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // printViewGrid
             // 
@@ -401,28 +424,6 @@
             this.printViewGrid.TabIndex = 22;
             this.printViewGrid.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.printViewGrid_RowEnter);
             this.printViewGrid.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.printViewGrid_RowLeave);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1006, 500);
-            this.tabControl1.TabIndex = 23;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.printViewGrid);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(998, 474);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -500,9 +501,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.printViewGrid)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.printViewGrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.payedGridView)).EndInit();
             this.ResumeLayout(false);
