@@ -16,7 +16,6 @@ namespace PrintApp
 {
     public partial class Form1 : Form
     {
-        public bool firstRun = true;
         private DateTime lastTime = DateTime.Today.AddDays(-0);
         public int pagesSumm = 0;
         public int pagesPlusCopies = 0;
@@ -28,7 +27,6 @@ namespace PrintApp
         public int totalPagesPrinted = 0;
         public int pagesPriceIndex = 0;
         public int logTotalPagesPrinted = 0;
-        public string todayPathString;
         public int taskNumber = 0;
         public bool dontPrint = false;
         public bool payedNumbersCleared = false;
@@ -45,8 +43,8 @@ namespace PrintApp
        
         //public int total
 
-        public int globalLinecount = 0;
-        public int logBWPGS = 0;
+        
+       
         public bool countedDefected = false;
         public bool countDefectedColor = false;
         public int defectPagesBW = 0;
@@ -359,7 +357,6 @@ namespace PrintApp
             {
                 FileStream fs = new FileStream(csvPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 StreamReader csvFile = new StreamReader(fs, Encoding.GetEncoding("windows-1251"));
-                todayPathString = csvPath;
                 return csvFile;
             }
             else {
