@@ -341,7 +341,7 @@ namespace PrintApp
         }
        
 
-        private StreamReader dload_file(int u)
+        private StreamReader load_file(int u)
         {
             DateTime myDate = DateTime.Today.AddDays(-u); //Date time variable
 
