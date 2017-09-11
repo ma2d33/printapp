@@ -20,13 +20,22 @@ namespace PrintApp
 
         private void confirmAdminButton_Click(object sender, EventArgs e)
         {
-            (Application.OpenForms[0] as Form1).setShiftLabel(comboBox1.Text);
+            (Application.OpenForms[0] as Form1).setShiftLabel(adminChangeBox.Text);
             this.Dispose();
             
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void AdminChangeForm_Load(object sender, EventArgs e)
+        {
+            if (adminChangeBox.Items.Count > 0)
+            {
+                adminChangeBox.SelectedIndex = 0;
+            }
             
         }
     }

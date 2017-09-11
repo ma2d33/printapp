@@ -64,14 +64,7 @@ namespace PrintApp
             
         }
 
-        private void loadMyCsv() {
-            string line;
-            StreamReader csvFile = load_myPayed_csv();
-            while((line = csvFile.ReadLine())   != null){
-                //logList.Items.Add(line.ToString());
-            }
-
-        }
+       
 
         
 
@@ -91,28 +84,7 @@ namespace PrintApp
             shiftLable.Text = val;
         }
 
-        private void addListLine(string printTimeString,string printerName,string clientName, int copies, int pages , string fileName) {
-
-            
-
-            if (dontPrint == false )
-            {
-                
-                
-                    ListViewItem item1 = new ListViewItem(printTimeString, 0);
-                    item1.SubItems.Add(printerName);
-                    item1.SubItems.Add((copies * pages).ToString());
-                    item1.SubItems.Add(clientName);
-                    item1.SubItems.Add(fileName);
-                    item1.SubItems.Add(taskNumber.ToString());
-
-                   
-                    
-                
-                
-            }
-            
-        }
+        
 
 
 
@@ -216,12 +188,7 @@ namespace PrintApp
         }
 
 
-
-
-
-    
-       
-
+        
         private void displayTime(int u ) {
 
             countDBRows(u);
@@ -229,10 +196,6 @@ namespace PrintApp
             int tasknum = 0;
 
             timeNow.Text = (DateTime.Now.ToShortDateString() +"  "+ DateTime.Now.ToLongTimeString());
-
-            
-           
-            
 
             string line;
             
@@ -291,11 +254,7 @@ namespace PrintApp
             
             
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private Timer timer1;
  
         public void initTimer() {
@@ -366,30 +325,26 @@ namespace PrintApp
                 return csvFile;
             }
             else {
-                return null;
+                File.AppendAllText(csvPath, "");
+                FileStream fs = new FileStream(csvPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                StreamReader csvFile = new StreamReader(fs, Encoding.GetEncoding("windows-1251"));
+                return csvFile;
+
             }
         }
 
-        private StreamReader load_myPayed_csv()
-        {
-            string csvPath = "C:\\myCsv\\myPayed" + DateTime.Now.ToShortDateString() + ".csv";  
-            FileStream fs = new FileStream(csvPath, FileMode.OpenOrCreate , FileAccess.Read, FileShare.ReadWrite);
-            
-            StreamReader myCsvFile = new StreamReader(fs);
 
-            return myCsvFile;
+
+
+        private void unceckAllBoxes() {
+            sixRubCheckBox.Checked  = false;
+            nineRubCheckBox.Checked = false;
+            threRubCheckBox.Checked = false;
+            fourRubCheckBox.Checked = false;
+            brakCheckBox.Checked = false;
+            colourCheckBox.Checked = false;
+
         }
-
-        private StreamReader load_myLog_csv()
-        {
-            string myCsfListFile = "C:\\myCsv\\mylog" + DateTime.Now.ToShortDateString() + ".csv"; // create main csv list file to work with
-            FileStream fs = new FileStream(myCsfListFile, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite);
-            StreamReader myCsvFile = new StreamReader(fs);
-            return myCsvFile;
-        }
-
-        
-
 
         private void sixRubCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -513,34 +468,7 @@ namespace PrintApp
         }
 
 
-        private void loadPaylog() {
-
-            string path = "C:\\myCsv\\myPayed" + DateTime.Now.ToShortDateString() + ".csv";
-            FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read, FileShare.ReadWrite);
-            StreamReader payedLog = new StreamReader(fs);
-            string line;
-
-            
-
-            while ((line = payedLog.ReadLine()) != null) {
-
-
-                string[] parts = line.Split(',');
-                string time = parts[1].ToString();
-                string copies = parts[2].ToString();
-                string money = parts[3].ToString();
-                ListViewItem items1 = new ListViewItem(time);
-                items1.SubItems.Add(copies);
-                items1.SubItems.Add(money);
-               // logList.Items.AddRange(new ListViewItem[] {items1});
-
-                
-            }
-
-         // logList.Items[logList.Items.Count - 1].EnsureVisible(); //scroll to bottom
-
-
-        }
+       
 
       
 
@@ -576,6 +504,7 @@ namespace PrintApp
             comm.ExecuteNonQuery();
             populatePrintViedDG();
             populatePayedDG();
+            unceckAllBoxes();
 
 
 
@@ -610,82 +539,7 @@ namespace PrintApp
 
       
 
-        public void countPages(string printerName , string numberOfPagesSelected , int pagesSumm) {
-
-            
-            if (printerName == "EPSON X" || printerName == "EPSON T")
-            {
-                totalColorPages += pagesSumm;
-                if (countDefectedColor == false)
-                {
-                    totalColorPages -= defectPagesColor;
-                    countDefectedColor = true;
-                    
-                }
-
-                if (totalColorPages >= 11)
-                    {
-                        pagesPriceIndex = 18;
-                    }
-                    else if (totalColorPages <= 10)
-                    {
-                        pagesPriceIndex = 20;
-                    }
-
-                    logTotalPagesPrinted += pagesSumm;
-                    int price = totalColorPages * pagesPriceIndex;
-                    PagesPlusCopiesColor = price;
-                    totalPagesPrinted = pagesPlusCopies + PagesPlusCopiesColor;
-
-                priceDisplayerFunct((totalPagesPrinted));
-               // totalSummLable.Text = "=" + totalPagesPrinted.ToString() + " Руб.";
-
-                    //show baloon tip in tray
-                   // notifyIcon1.BalloonTipText = printerName + " Страниц " + " " + totalColorPages.ToString() + Environment.NewLine + totalPagesPrinted.ToString();
-                    //notifyIcon1.ShowBalloonTip(100);
-                
-            }
-            else if (printerName == "Kyocera" || printerName == "HP Lase")
-            {
-                totalBWpages += pagesSumm;
-                if (countedDefected == false) {
-                    totalBWpages -= defectPagesBW; 
-                    countedDefected = true;
-                    
-                }
-                
-
-                if (Enumerable.Range(51, 100).Contains(totalBWpages))
-                    {
-                        pagesPriceIndex = 4;
-                    }
-                    else if (Enumerable.Range(10, 51).Contains(totalBWpages))
-                    {
-                        pagesPriceIndex = 6;
-                    }
-                    else if (Enumerable.Range(0, 10).Contains(totalBWpages))
-                    {
-                        pagesPriceIndex = 9;
-                    }
-                    else // if more than 100 pages are printed
-                    {
-                        pagesPriceIndex = 3;
-                    }
-
-
-                    logTotalPagesPrinted += pagesSumm;
-                    int price = totalBWpages * pagesPriceIndex;
-                    pagesPlusCopies = price;
-                    totalPagesPrinted = pagesPlusCopies + PagesPlusCopiesColor;
-                     priceDisplayerFunct(totalPagesPrinted);
-                    //totalSummLable.Text = "=" + totalPagesPrinted.ToString() + " Руб.";
-                    //show baloon tip in tray
-                  //  notifyIcon1.BalloonTipText = printerName + " Страниц " + " " + totalBWpages.ToString() + Environment.NewLine + totalPagesPrinted.ToString();
-                   // notifyIcon1.ShowBalloonTip(100);
-                
-            }
-
-        }
+       
 
         private void priceDisplayerFunct(int price) {
 
@@ -967,7 +821,7 @@ namespace PrintApp
                     {
                         bwPageSumm = bwPages * 9;
                     }
-                    else
+                    else if (bwPages > 100 || threRubCheckBox.Checked == true)
                     {
                         bwPageSumm = bwPages * 3;
                     }
@@ -1014,9 +868,19 @@ namespace PrintApp
             colorDefectControl.Value = 0;
         }
 
-        private void totalShiftSummLBL_Click(object sender, EventArgs e)
-        {
+       
 
+        private void printViewGrid_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (printViewGrid.RowCount > 0) {
+                printViewGrid.Rows[0].Selected = true;
+            }
+            string a, b, c;
+            a = Convert.ToString(printViewGrid.Rows[0].Cells[2].Value);
+            b = Convert.ToString(printViewGrid.Rows[0].Cells[3].Value);
+            c = Convert.ToString(printViewGrid.Rows[0].Cells[4].Value);
+            notifyIcon1.BalloonTipText = "_" + a + "_" + b + "_" + c;
+            notifyIcon1.ShowBalloonTip(500);
         }
     }
 }

@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.adminChangeBox = new System.Windows.Forms.ComboBox();
             this.confirmAdminButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // adminChangeBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.adminChangeBox.FormattingEnabled = true;
+            this.adminChangeBox.Items.AddRange(new object[] {
             "Ира",
             "Янис\t",
             "Александр",
             "Дмитрий"});
-            this.comboBox1.Location = new System.Drawing.Point(79, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.adminChangeBox.Location = new System.Drawing.Point(79, 32);
+            this.adminChangeBox.Name = "adminChangeBox";
+            this.adminChangeBox.Size = new System.Drawing.Size(121, 21);
+            this.adminChangeBox.TabIndex = 0;
+            this.adminChangeBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // confirmAdminButton
             // 
@@ -62,20 +62,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 109);
             this.Controls.Add(this.confirmAdminButton);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.adminChangeBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdminChangeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.AdminChangeForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox adminChangeBox;
         private System.Windows.Forms.Button confirmAdminButton;
     }
 }

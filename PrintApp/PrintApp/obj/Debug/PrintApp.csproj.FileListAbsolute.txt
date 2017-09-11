@@ -29,7 +29,6 @@ C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\bin\Debug\EntityFram
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\bin\Debug\System.Data.SQLite.xml
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.csprojResolveAssemblyReference.cache
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.AdminChangeForm.resources
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.Form1.resources
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.Properties.Resources.resources
@@ -37,3 +36,4 @@ C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.c
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.csproj.CoreCompileInputs.cache
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.exe
 C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.pdb
+C:\Users\Laguna\Dropbox\printappsvn\trunk\PrintApp\PrintApp\obj\Debug\PrintApp.csprojResolveAssemblyReference.cache

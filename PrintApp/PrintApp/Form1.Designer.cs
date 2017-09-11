@@ -62,7 +62,7 @@
             this.timeNow = new System.Windows.Forms.Label();
             this.shiftLable = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabcontrol = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.printViewGrid = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.defectControl)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabcontrol.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printViewGrid)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -155,38 +155,42 @@
             // colorDefectLable
             // 
             this.colorDefectLable.AutoSize = true;
-            this.colorDefectLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.colorDefectLable.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.colorDefectLable.Location = new System.Drawing.Point(25, 13);
             this.colorDefectLable.Name = "colorDefectLable";
-            this.colorDefectLable.Size = new System.Drawing.Size(185, 39);
+            this.colorDefectLable.Size = new System.Drawing.Size(159, 33);
             this.colorDefectLable.TabIndex = 41;
             this.colorDefectLable.Text = "Цвет Брак";
             // 
             // colorDefectControl
             // 
-            this.colorDefectControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.colorDefectControl.BackColor = System.Drawing.SystemColors.Desktop;
+            this.colorDefectControl.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.colorDefectControl.ForeColor = System.Drawing.SystemColors.Window;
             this.colorDefectControl.Location = new System.Drawing.Point(32, 53);
             this.colorDefectControl.Name = "colorDefectControl";
-            this.colorDefectControl.Size = new System.Drawing.Size(239, 53);
+            this.colorDefectControl.Size = new System.Drawing.Size(239, 52);
             this.colorDefectControl.TabIndex = 40;
             this.colorDefectControl.ValueChanged += new System.EventHandler(this.colorDefectControl_ValueChanged);
             // 
             // BWdefect
             // 
             this.BWdefect.AutoSize = true;
-            this.BWdefect.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BWdefect.Location = new System.Drawing.Point(287, 10);
+            this.BWdefect.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BWdefect.Location = new System.Drawing.Point(288, 13);
             this.BWdefect.Name = "BWdefect";
-            this.BWdefect.Size = new System.Drawing.Size(152, 39);
+            this.BWdefect.Size = new System.Drawing.Size(271, 33);
             this.BWdefect.TabIndex = 39;
-            this.BWdefect.Text = "ЧБ Брак";
+            this.BWdefect.Text = "Черно Белый Брак";
             // 
             // defectControl
             // 
-            this.defectControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.defectControl.BackColor = System.Drawing.SystemColors.Desktop;
+            this.defectControl.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.defectControl.ForeColor = System.Drawing.SystemColors.Window;
             this.defectControl.Location = new System.Drawing.Point(294, 53);
             this.defectControl.Name = "defectControl";
-            this.defectControl.Size = new System.Drawing.Size(239, 53);
+            this.defectControl.Size = new System.Drawing.Size(239, 52);
             this.defectControl.TabIndex = 38;
             this.defectControl.ValueChanged += new System.EventHandler(this.defectControl_ValueChanged);
             // 
@@ -201,10 +205,10 @@
             // totalSummLable
             // 
             this.totalSummLable.AutoSize = true;
-            this.totalSummLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalSummLable.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.totalSummLable.Location = new System.Drawing.Point(708, 53);
             this.totalSummLable.Name = "totalSummLable";
-            this.totalSummLable.Size = new System.Drawing.Size(93, 29);
+            this.totalSummLable.Size = new System.Drawing.Size(94, 24);
             this.totalSummLable.TabIndex = 36;
             this.totalSummLable.Text = "= 0 Руб";
             // 
@@ -307,14 +311,14 @@
             // totalShiftSummLBL
             // 
             this.totalShiftSummLBL.AutoSize = true;
-            this.totalShiftSummLBL.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalShiftSummLBL.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.totalShiftSummLBL.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.totalShiftSummLBL.Location = new System.Drawing.Point(650, 44);
             this.totalShiftSummLBL.Name = "totalShiftSummLBL";
             this.totalShiftSummLBL.Size = new System.Drawing.Size(58, 24);
             this.totalShiftSummLBL.TabIndex = 32;
             this.totalShiftSummLBL.Text = "time";
-            this.totalShiftSummLBL.Click += new System.EventHandler(this.totalShiftSummLBL_Click);
+            //this.totalShiftSummLBL.Click += new System.EventHandler(this.totalShiftSummLBL_Click);
             // 
             // endShiftButton
             // 
@@ -329,7 +333,7 @@
             // timeNow
             // 
             this.timeNow.AutoSize = true;
-            this.timeNow.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeNow.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeNow.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.timeNow.Location = new System.Drawing.Point(152, 44);
             this.timeNow.Name = "timeNow";
@@ -340,32 +344,32 @@
             // shiftLable
             // 
             this.shiftLable.AutoSize = true;
-            this.shiftLable.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.shiftLable.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.shiftLable.Location = new System.Drawing.Point(9, 42);
             this.shiftLable.Name = "shiftLable";
-            this.shiftLable.Size = new System.Drawing.Size(81, 25);
+            this.shiftLable.Size = new System.Drawing.Size(70, 24);
             this.shiftLable.TabIndex = 25;
             this.shiftLable.Text = "Смена";
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.tabControl1);
+            this.panel3.Controls.Add(this.tabcontrol);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 78);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1006, 500);
             this.panel3.TabIndex = 32;
             // 
-            // tabControl1
+            // tabcontrol
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1006, 500);
-            this.tabControl1.TabIndex = 23;
+            this.tabcontrol.Controls.Add(this.tabPage1);
+            this.tabcontrol.Controls.Add(this.tabPage2);
+            this.tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabcontrol.Location = new System.Drawing.Point(0, 0);
+            this.tabcontrol.Name = "tabcontrol";
+            this.tabcontrol.SelectedIndex = 0;
+            this.tabcontrol.Size = new System.Drawing.Size(1006, 500);
+            this.tabcontrol.TabIndex = 23;
             // 
             // tabPage1
             // 
@@ -375,7 +379,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(998, 474);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Очередь на оплату";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // printViewGrid
@@ -388,7 +392,7 @@
             this.printViewGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Format = "G";
             dataGridViewCellStyle1.NullValue = null;
@@ -424,6 +428,7 @@
             this.printViewGrid.TabIndex = 22;
             this.printViewGrid.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.printViewGrid_RowEnter);
             this.printViewGrid.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.printViewGrid_RowLeave);
+            this.printViewGrid.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.printViewGrid_RowsAdded);
             // 
             // tabPage2
             // 
@@ -433,7 +438,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(998, 474);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Оплачено";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // payedGridView
@@ -445,7 +450,7 @@
             this.payedGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -454,7 +459,7 @@
             this.payedGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Terminus (TTF) for Windows", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -501,7 +506,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tabcontrol.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.printViewGrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -538,7 +543,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView printViewGrid;
         private System.Windows.Forms.Label totalShiftSummLBL;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabcontrol;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView payedGridView;
